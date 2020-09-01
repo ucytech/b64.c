@@ -29,7 +29,7 @@ char* b64_buf_malloc();
 // Update memory size. Returns the same pointer if we
 // have enough space in the buffer. Otherwise, we add
 // additional buffers.
-char* b64_buf_realloc(unsigned char* ptr, size_t size);
+char* b64_buf_realloc(char* ptr, size_t size);
 
 /**
  * Base64 index table.
@@ -57,21 +57,6 @@ extern "C" {
 
 char *
 b64_encode (const unsigned char *, size_t);
-
-/**
- * Decode `char *' source with `size_t' size.
- * Returns a `unsigned char *' base64 decoded string.
- */
-unsigned char *
-b64_decode (const char *, size_t);
-
-/**
- * Decode `char *' source with `size_t' size.
- * Returns a `unsigned char *' base64 decoded string + size of decoded string.
- */
-unsigned char *
-b64_decode_ex (const char *, size_t, size_t *);
-
 #ifdef __cplusplus
 }
 #endif
